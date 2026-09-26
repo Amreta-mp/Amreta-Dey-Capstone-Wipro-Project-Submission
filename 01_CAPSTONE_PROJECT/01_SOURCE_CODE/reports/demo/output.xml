@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.9 on win32)" generated="2026-09-17T13:12:50.852716" rpa="false" schemaversion="5">
+<suite id="s1" name="Full Flow Demo" source="E:\amreta\wipro\ECommerceAutomation\tests\demo\full_flow_demo.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-09-17T13:12:51.564728" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-17T13:12:51.564728" elapsed="5.673302"/>
+</kw>
+<test id="s1-t1" name="Full E-Commerce Demo Flow" line="16">
+<kw name="Go To Login Page" owner="LoginPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-17T13:12:57.243341" level="INFO">Clicking element 'link:Signup / Login'.</msg>
+<arg>${SIGNUP_LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-17T13:12:57.240036" elapsed="4.915111"/>
+</kw>
+<status status="PASS" start="2026-09-17T13:12:57.240036" elapsed="4.915111"/>
+</kw>
+<kw name="Enter Login Email" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-17T13:13:02.160874" level="INFO">Typing text 'wronguser@example.com' into text field 'css:input[data-qa="login-email"]'.</msg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-17T13:13:02.157760" elapsed="0.154625"/>
+</kw>
+<arg>wronguser@example.com</arg>
+<status status="PASS" start="2026-09-17T13:13:02.157760" elapsed="0.154625"/>
+</kw>
+<kw name="Enter Login Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-17T13:13:02.318091" level="INFO">Typing text 'wrongpassword' into text field 'css:input[data-qa="login-password"]'.</msg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-17T13:13:02.316354" elapsed="0.206416"/>
+</kw>
+<arg>wrongpassword</arg>
+<status status="PASS" start="2026-09-17T13:13:02.316354" elapsed="0.206416"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-17T13:13:02.525583" level="INFO">Executing JavaScript:
+document.querySelector('[data-qa="login-button"]').click();
+Without any arguments.</msg>
+<arg>document.querySelector('[data-qa="login-button"]').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-17T13:13:02.525583" elapsed="0.013924"/>
+</kw>
+<status status="PASS" start="2026-09-17T13:13:02.522770" elapsed="0.016737"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-17T13:13:06.671465" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../screenshots/selenium-screenshot-10.png"&gt;&lt;img src="../../screenshots/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-09-17T13:13:06.671465" level="FAIL">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=153.0.8010.48); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7f696c895+5aa5]
+	chromedriver!(No symbol) [0x7ff7f6890570]
+	chromedriver!(No symbol) [0x7ff7f66b4a7d]
+	chromedriver!(No symbol) [0x7ff7f66cc33d]
+	chromedriver!(No symbol) [0x7ff7f66cada0]
+	chromedriver!(No symbol) [0x7ff7f66bd7c5]
+	chromedriver!(No symbol) [0x7ff7f66bb5ae]
+	chromedriver!(No symbol) [0x7ff7f66bfa95]
+	chromedriver!(No symbol) [0x7ff7f66bfb5f]
+	chromedriver!(No symbol) [0x7ff7f6713f00]
+	chromedriver!(No symbol) [0x7ff7f6762267]
+	chromedriver!(No symbol) [0x7ff7f67398aa]
+	chromedriver!(No symbol) [0x7ff7f676008f]
+	chromedriver!(No symbol) [0x7ff7f67021e2]
+	chromedriver!(No symbol) [0x7ff7f6702ff3]
+	chromedriver!GetHandleVerifier [0x7ff7f6d8b271+424481]
+	chromedriver!GetHandleVerifier [0x7ff7f6db6f77+450187]
+	chromedriver!GetHandleVerifier [0x7ff7f6daae6e+44407e]
+	chromedriver!GetHandleVerifier [0x7ff7f6a6798e+100b9e]
+	chromedriver!(No symbol) [0x7ff7f689e2b5]
+	chromedriver!(No symbol) [0x7ff7f6899454]
+	chromedriver!(No symbol) [0x7ff7f68995e4]
+	chromedriver!(No symbol) [0x7ff7f688438c]
+	KERNEL32!BaseThreadInitThunk [0x7fff2bcacd87+17]
+	ntdll!RtlUserThreadStart [0x7fff2d54caec+2c]
+</msg>
+<arg>Your email or password is incorrect!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-09-17T13:13:02.539507" elapsed="4.150287">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=153.0.8010.48); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7f696c895+5aa5]
+	chromedriver!(No symbol) [0x7ff7f6890570]
+	chromedriver!(No symbol) [0x7ff7f66b4a7d]
+	chromedriver!(No symbol) [0x7ff7f66cc33d]
+	chromedriver!(No symbol) [0x7ff7f66cada0]
+	chromedriver!(No symbol) [0x7ff7f66bd7c5]
+	chromedriver!(No symbol) [0x7ff7f66bb5ae]
+	chromedriver!(No symbol) [0x7ff7f66bfa95]
+	chromedriver!(No symbol) [0x7ff7f66bfb5f]
+	chromedriver!(No symbol) [0x7ff7f6713f00]
+	chromedriver!(No symbol) [0x7ff7f6762267]
+	chromedriver!(No symbol) [0x7ff7f67398aa]
+	chromedriver!(No symbol) [0x7ff7f676008f]
+	chromedriver!(No symbol) [0x7ff7f67021e2]
+	chromedriver!(No symbol) [0x7ff7f6702ff3]
+	chromedriver!GetHandleVerifier [0x7ff7f6d8b271+424481]
+	chromedriver!GetHandleVerifier [0x7ff7f6db6f77+450187]
+	chromedriver!GetHandleVerifier [0x7ff7f6daae6e+44407e]
+	chromedriver!GetHandleVerifier [0x7ff7f6a6798e+100b9e]
+	chromedriver!(No symbol) [0x7ff7f689e2b5]
+	chromedriver!(No symbol) [0x7ff7f6899454]
+	chromedriver!(No symbol) [0x7ff7f68995e4]
+	chromedriver!(No symbol) [0x7ff7f688438c]
+	KERNEL32!BaseThreadInitThunk [0x7fff2bcacd87+17]
+	ntdll!RtlUserThreadStart [0x7fff2d54caec+2c]
+</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Wrong credentials correctly rejected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.689794" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Login Email" owner="LoginPage">
+<arg>${EMAIL}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.689794" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Login Password" owner="LoginPage">
+<arg>${PASSWORD}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.689794" elapsed="0.000000"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<status status="NOT RUN" start="2026-09-17T13:13:06.689794" elapsed="0.000000"/>
+</kw>
+<kw name="Verify User Logged In" owner="HomePage">
+<status status="NOT RUN" start="2026-09-17T13:13:06.689794" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Logged in successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698164" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{all_totals}</var>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Search For Product And Add To Cart" owner="ECommerceKeywords">
+<arg>Tshirt</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Search For Product And Add To Cart" owner="ECommerceKeywords">
+<arg>Jeans</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Product In Cart" owner="ECommerceKeywords">
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Get Cart Row Count" owner="CartPage">
+<var>${row_count}</var>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${last}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Cart Row Price" owner="CartPage">
+<var>${price}</var>
+<arg>${i}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Get Cart Row Quantity" owner="CartPage">
+<var>${quantity}</var>
+<arg>${i}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.000000"/>
+</kw>
+<kw name="Get Cart Row Total" owner="CartPage">
+<var>${total}</var>
+<arg>${i}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Row ${i}: price=${price} x quantity=${quantity} should equal total=${total}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Total" owner="ValidationLibrary">
+<arg>${price}</arg>
+<arg>${quantity}</arg>
+<arg>${total}</arg>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${all_totals}</arg>
+<arg>${total}</arg>
+<doc>Adds `values` to the end of `list`.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.007897"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${last}</value>
+<status status="NOT RUN" start="2026-09-17T13:13:06.698581" elapsed="0.007897"/>
+</for>
+<kw name="Sum Totals" owner="ValidationLibrary">
+<var>${cart_value}</var>
+<arg>${all_totals}</arg>
+<doc>Adds up a list of per-row totals into one grand total.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Final Cart Value = ${cart_value}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Logout From Website" owner="ECommerceKeywords">
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Logged out successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-09-17T13:13:06.706478" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-09-17T13:12:57.238030" elapsed="9.468448">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=153.0.8010.48); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7f696c895+5aa5]
+	chromedriver!(No symbol) [0x7ff7f6890570]
+	chromedriver!(No symbol) [0x7ff7f66b4a7d]
+	chromedriver!(No symbol) [0x7ff7f66cc33d]
+	chromedriver!(No symbol) [0x7ff7f66cada0]
+	chromedriver!(No symbol) [0x7ff7f66bd7c5]
+	chromedriver!(No symbol) [0x7ff7f66bb5ae]
+	chromedriver!(No symbol) [0x7ff7f66bfa95]
+	chromedriver!(No symbol) [0x7ff7f66bfb5f]
+	chromedriver!(No symbol) [0x7ff7f6713f00]
+	chromedriver!(No symbol) [0x7ff7f6762267]
+	chromedriver!(No symbol) [0x7ff7f67398aa]
+	chromedriver!(No symbol) [0x7ff7f676008f]
+	chromedriver!(No symbol) [0x7ff7f67021e2]
+	chromedriver!(No symbol) [0x7ff7f6702ff3]
+	chromedriver!GetHandleVerifier [0x7ff7f6d8b271+424481]
+	chromedriver!GetHandleVerifier [0x7ff7f6db6f77+450187]
+	chromedriver!GetHandleVerifier [0x7ff7f6daae6e+44407e]
+	chromedriver!GetHandleVerifier [0x7ff7f6a6798e+100b9e]
+	chromedriver!(No symbol) [0x7ff7f689e2b5]
+	chromedriver!(No symbol) [0x7ff7f6899454]
+	chromedriver!(No symbol) [0x7ff7f68995e4]
+	chromedriver!(No symbol) [0x7ff7f688438c]
+	KERNEL32!BaseThreadInitThunk [0x7fff2bcacd87+17]
+	ntdll!RtlUserThreadStart [0x7fff2d54caec+2c]
+</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-17T13:13:06.716264" elapsed="2.627713"/>
+</kw>
+<status status="FAIL" start="2026-09-17T13:12:50.854725" elapsed="18.489252"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Full Flow Demo" id="s1" pass="0" fail="1" skip="0">Full Flow Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

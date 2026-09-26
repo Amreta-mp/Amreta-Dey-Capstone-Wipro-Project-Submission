@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.9 on win32)" generated="2026-09-26T14:23:26.367192" rpa="false" schemaversion="5">
+<suite id="s1" name="Negative" source="E:\amreta\wipro\ECommerceAutomation\tests\negative">
+<suite id="s1-s1" name="Invalid Login" source="E:\amreta\wipro\ECommerceAutomation\tests\negative\invalid_login.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-09-26T14:23:26.872185" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-26T14:23:26.872185" elapsed="10.739654"/>
+</kw>
+<test id="s1-s1-t1" name="Login With Invalid Credentials Should Fail" line="10">
+<kw name="Login To Website" owner="ECommerceKeywords">
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-26T14:23:37.621902" level="INFO">[2026-09-26 14:23:37] Attempting login with wronguser@example.com</msg>
+<arg>Attempting login with ${email}</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-26T14:23:37.615622" elapsed="0.006280"/>
+</kw>
+<kw name="Go To Login Page" owner="LoginPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T14:23:37.627000" level="INFO">Clicking element 'link:Signup / Login'.</msg>
+<arg>${SIGNUP_LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T14:23:37.623467" elapsed="5.123998"/>
+</kw>
+<status status="PASS" start="2026-09-26T14:23:37.621902" elapsed="5.125563"/>
+</kw>
+<kw name="Enter Login Email" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-26T14:23:42.749473" level="INFO">Typing text 'wronguser@example.com' into text field 'css:input[data-qa="login-email"]'.</msg>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T14:23:42.749473" elapsed="0.339149"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2026-09-26T14:23:42.747465" elapsed="0.341157"/>
+</kw>
+<kw name="Enter Login Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-26T14:23:43.095040" level="INFO">Typing text 'wrongpassword' into text field 'css:input[data-qa="login-password"]'.</msg>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T14:23:43.095040" elapsed="0.172204"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-09-26T14:23:43.092275" elapsed="0.174969"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-26T14:23:43.268054" level="INFO">Executing JavaScript:
+document.querySelector('[data-qa="login-button"]').click();
+Without any arguments.</msg>
+<arg>document.querySelector('[data-qa="login-button"]').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-26T14:23:43.268054" elapsed="2.812796"/>
+</kw>
+<status status="PASS" start="2026-09-26T14:23:43.268054" elapsed="2.816336"/>
+</kw>
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-26T14:23:46.084390" level="INFO">[2026-09-26 14:23:46] Login submitted</msg>
+<arg>Login submitted</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-26T14:23:46.084390" elapsed="0.000000"/>
+</kw>
+<arg>wronguser@example.com</arg>
+<arg>wrongpassword</arg>
+<status status="PASS" start="2026-09-26T14:23:37.615622" elapsed="8.468768"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-26T14:23:46.121147" level="INFO">Current page contains text 'Your email or password is incorrect!'.</msg>
+<arg>Your email or password is incorrect!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-26T14:23:46.084390" elapsed="0.036757"/>
+</kw>
+<status status="PASS" start="2026-09-26T14:23:37.615111" elapsed="8.508043"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-26T14:23:46.126676" elapsed="2.843705"/>
+</kw>
+<status status="PASS" start="2026-09-26T14:23:26.405158" elapsed="22.565223"/>
+</suite>
+<status status="PASS" start="2026-09-26T14:23:26.370647" elapsed="22.602179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Negative" id="s1" pass="1" fail="0" skip="0">Negative</stat>
+<stat name="Invalid Login" id="s1-s1" pass="1" fail="0" skip="0">Negative.Invalid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

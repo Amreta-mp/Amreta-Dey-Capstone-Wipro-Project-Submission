@@ -1,0 +1,3 @@
+username,password,expected
+amretadey.tensat@gmail.com,MyPass456,success
+wronguser@example.com,wrongpassword,failure

@@ -1,0 +1,4 @@
+product_name,expected_result
+Tshirt,found
+Jeans,found
+zzznonexistentproduct,not_found

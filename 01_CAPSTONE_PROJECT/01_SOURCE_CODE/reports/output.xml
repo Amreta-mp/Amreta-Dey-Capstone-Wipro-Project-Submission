@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.9 on win32)" generated="2026-09-19T20:53:35.280683" rpa="false" schemaversion="5">
+<suite id="s1" name="Cart" source="E:\amreta\wipro\ECommerceAutomation\tests\regression\cart.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-09-19T20:53:35.639875" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-19T20:53:35.639875" elapsed="23.774709"/>
+</kw>
+<test id="s1-t1" name="Add Multiple Products To Cart And Verify" line="11">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-09-19T20:53:59.416589" level="INFO">@{all_totals} = [ ]</msg>
+<var>@{all_totals}</var>
+<doc>Creates and returns a list containing the given items.</doc>
+<status status="PASS" start="2026-09-19T20:53:59.416589" elapsed="0.000000"/>
+</kw>
+<kw name="Search For Product And Add To Cart" owner="ECommerceKeywords">
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-19T20:53:59.418593" level="INFO">[2026-09-19 20:53:59] Searching for product: Tshirt</msg>
+<arg>Searching for product: ${product_name}</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-19T20:53:59.418593" elapsed="0.000000"/>
+</kw>
+<kw name="Go To Products Page" owner="HomePage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:53:59.418593" level="INFO">Opening url 'https://automationexercise.com/products'</msg>
+<arg>${URL}/products</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-19T20:53:59.418593" elapsed="7.110690"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:53:59.418593" elapsed="7.110690"/>
+</kw>
+<kw name="Search For Product" owner="ProductPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:06.529283" level="INFO">Typing text 'Tshirt' into text field 'id:search_product'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${product_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:06.529283" elapsed="0.093367"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:06.624654" level="INFO">Executing JavaScript:
+document.getElementById('submit_search').click();
+Without any arguments.</msg>
+<arg>document.getElementById('submit_search').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-19T20:54:06.624654" elapsed="1.550844"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2026-09-19T20:54:06.529283" elapsed="1.646215"/>
+</kw>
+<kw name="Verify Search Results Title" owner="ProductPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Searched Products</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.175498" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:08.175498" elapsed="0.000000"/>
+</kw>
+<kw name="Add First Product To Cart" owner="ProductPage">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:08.175498" level="INFO">Simulating Mouse Over on element 'css:.product-image-wrapper .add-to-cart'.</msg>
+<arg>${FIRST_ADD_TO_CART}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.175498" elapsed="0.286949"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:08.462447" level="INFO">Executing JavaScript:
+document.querySelector('.product-image-wrapper .add-to-cart').click();
+Without any arguments.</msg>
+<arg>document.querySelector('.product-image-wrapper .add-to-cart').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.462447" elapsed="0.007602"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONTINUE_SHOPPING}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.470049" elapsed="0.454532"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:08.924581" level="INFO">Clicking element 'css:.btn.btn-success.close-modal.btn-block'.</msg>
+<arg>${CONTINUE_SHOPPING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.924581" elapsed="0.034684"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:08.175498" elapsed="0.783767"/>
+</kw>
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-19T20:54:08.959265" level="INFO">[2026-09-19 20:54:08] Product added to cart: Tshirt</msg>
+<arg>Product added to cart: ${product_name}</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.959265" elapsed="0.000000"/>
+</kw>
+<arg>Tshirt</arg>
+<status status="PASS" start="2026-09-19T20:53:59.418593" elapsed="9.540672"/>
+</kw>
+<kw name="Search For Product And Add To Cart" owner="ECommerceKeywords">
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-19T20:54:08.959265" level="INFO">[2026-09-19 20:54:08] Searching for product: Jeans</msg>
+<arg>Searching for product: ${product_name}</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.959265" elapsed="0.000000"/>
+</kw>
+<kw name="Go To Products Page" owner="HomePage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:08.959265" level="INFO">Opening url 'https://automationexercise.com/products'</msg>
+<arg>${URL}/products</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-19T20:54:08.959265" elapsed="4.522673"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:08.959265" elapsed="4.522673"/>
+</kw>
+<kw name="Search For Product" owner="ProductPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:13.482937" level="INFO">Typing text 'Jeans' into text field 'id:search_product'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${product_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:13.481938" elapsed="0.055508"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:13.538453" level="INFO">Executing JavaScript:
+document.getElementById('submit_search').click();
+Without any arguments.</msg>
+<arg>document.getElementById('submit_search').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-19T20:54:13.538453" elapsed="5.171786"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2026-09-19T20:54:13.481938" elapsed="5.228301"/>
+</kw>
+<kw name="Verify Search Results Title" owner="ProductPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Searched Products</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-19T20:54:18.711366" elapsed="0.006298"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:18.711366" elapsed="0.006298"/>
+</kw>
+<kw name="Add First Product To Cart" owner="ProductPage">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:18.717664" level="INFO">Simulating Mouse Over on element 'css:.product-image-wrapper .add-to-cart'.</msg>
+<arg>${FIRST_ADD_TO_CART}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:18.717664" elapsed="0.310540"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:19.029427" level="INFO">Executing JavaScript:
+document.querySelector('.product-image-wrapper .add-to-cart').click();
+Without any arguments.</msg>
+<arg>document.querySelector('.product-image-wrapper .add-to-cart').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-19T20:54:19.029427" elapsed="0.004434"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONTINUE_SHOPPING}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-19T20:54:19.033861" elapsed="1.097818"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:20.132182" level="INFO">Clicking element 'css:.btn.btn-success.close-modal.btn-block'.</msg>
+<arg>${CONTINUE_SHOPPING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:20.132182" elapsed="0.080606"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:18.717664" elapsed="1.495124"/>
+</kw>
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-19T20:54:20.213786" level="INFO">[2026-09-19 20:54:20] Product added to cart: Jeans</msg>
+<arg>Product added to cart: ${product_name}</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-19T20:54:20.213786" elapsed="0.001284"/>
+</kw>
+<arg>Jeans</arg>
+<status status="PASS" start="2026-09-19T20:54:08.959265" elapsed="11.255805"/>
+</kw>
+<kw name="Verify Product In Cart" owner="ECommerceKeywords">
+<kw name="Open Cart" owner="CartPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:20.216563" level="INFO">Clicking element 'link:Cart'.</msg>
+<arg>${CART_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:20.216563" elapsed="1.664896"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:20.215567" elapsed="1.665892"/>
+</kw>
+<kw name="Verify Cart Page Displayed" owner="CartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CART_ITEMS_TABLE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.881459" elapsed="0.014210"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:21.909898" level="INFO">Current location contains 'view_cart'.</msg>
+<arg>view_cart</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.895669" elapsed="0.014229"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:21.881459" elapsed="0.028439"/>
+</kw>
+<kw name="Log Step" owner="BrowserUtility">
+<msg time="2026-09-19T20:54:21.910939" level="INFO">[2026-09-19 20:54:21] Cart page verified</msg>
+<arg>Cart page verified</arg>
+<doc>Writes a timestamped line to logs/execution.log and echoes it.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.909898" elapsed="0.001041"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:54:20.215567" elapsed="1.695372"/>
+</kw>
+<kw name="Get Cart Row Count" owner="CartPage">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:21.920104" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>css:#cart_info tbody tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.912298" elapsed="0.007806"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-09-19T20:54:21.920104" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:21.920104" level="INFO">${row_count} = 2</msg>
+<var>${row_count}</var>
+<status status="PASS" start="2026-09-19T20:54:21.912298" elapsed="0.007806"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-19T20:54:21.921108" level="INFO">${last} = 3</msg>
+<var>${last}</var>
+<arg>${row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.921108" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Cart Row Price" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:21.940843" level="INFO">${text} = Rs. 400</msg>
+<var>${text}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_price p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.922122" elapsed="0.018721"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-09-19T20:54:21.941863" level="INFO">${clean} =  400</msg>
+<var>${clean}</var>
+<arg>${text}</arg>
+<arg>Rs.</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces `search_for` in the given `string` with `replace_with`.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.941863" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-09-19T20:54:21.941863" level="INFO">${clean} = 400</msg>
+<var>${clean}</var>
+<arg>${clean}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.941863" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${clean}</value>
+<status status="PASS" start="2026-09-19T20:54:21.941863" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:21.941863" level="INFO">${price} = 400</msg>
+<var>${price}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:21.922122" elapsed="0.019741"/>
+</kw>
+<kw name="Get Cart Row Quantity" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:21.958621" level="INFO">${qty} = 1</msg>
+<var>${qty}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_quantity button</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.943869" elapsed="0.014752"/>
+</kw>
+<return>
+<value>${qty}</value>
+<status status="PASS" start="2026-09-19T20:54:21.958621" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:21.958621" level="INFO">${quantity} = 1</msg>
+<var>${quantity}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:21.943869" elapsed="0.014752"/>
+</kw>
+<kw name="Get Cart Row Total" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:21.975066" level="INFO">${text} = Rs. 400</msg>
+<var>${text}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_total p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.958621" elapsed="0.016445"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-09-19T20:54:21.975066" level="INFO">${clean} =  400</msg>
+<var>${clean}</var>
+<arg>${text}</arg>
+<arg>Rs.</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces `search_for` in the given `string` with `replace_with`.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-09-19T20:54:21.975066" level="INFO">${clean} = 400</msg>
+<var>${clean}</var>
+<arg>${clean}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${clean}</value>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:21.975066" level="INFO">${total} = 400</msg>
+<var>${total}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:21.958621" elapsed="0.016445"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-19T20:54:21.975066" level="INFO">Row 1: price=400 x quantity=1 should equal total=400</msg>
+<arg>Row ${i}: price=${price} x quantity=${quantity} should equal total=${total}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Total" owner="ValidationLibrary">
+<arg>${price}</arg>
+<arg>${quantity}</arg>
+<arg>${total}</arg>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${all_totals}</arg>
+<arg>${total}</arg>
+<doc>Adds `values` to the end of `list`.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-09-19T20:54:21.922122" elapsed="0.052944"/>
+</iter>
+<iter>
+<kw name="Get Cart Row Price" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:22.003531" level="INFO">${text} = Rs. 799</msg>
+<var>${text}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_price p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:21.989901" elapsed="0.013630"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-09-19T20:54:22.003531" level="INFO">${clean} =  799</msg>
+<var>${clean}</var>
+<arg>${text}</arg>
+<arg>Rs.</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces `search_for` in the given `string` with `replace_with`.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.003531" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-09-19T20:54:22.003531" level="INFO">${clean} = 799</msg>
+<var>${clean}</var>
+<arg>${clean}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.003531" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${clean}</value>
+<status status="PASS" start="2026-09-19T20:54:22.004544" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:22.004544" level="INFO">${price} = 799</msg>
+<var>${price}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.029478"/>
+</kw>
+<kw name="Get Cart Row Quantity" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:22.046790" level="INFO">${qty} = 1</msg>
+<var>${qty}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_quantity button</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.004544" elapsed="0.042246"/>
+</kw>
+<return>
+<value>${qty}</value>
+<status status="PASS" start="2026-09-19T20:54:22.046790" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:22.046790" level="INFO">${quantity} = 1</msg>
+<var>${quantity}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:22.004544" elapsed="0.042246"/>
+</kw>
+<kw name="Get Cart Row Total" owner="CartPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-19T20:54:22.063154" level="INFO">${text} = Rs. 799</msg>
+<var>${text}</var>
+<arg>css:#cart_info tbody tr:nth-child(${row_index}) .cart_total p</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.048194" elapsed="0.014960"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-09-19T20:54:22.064157" level="INFO">${clean} =  799</msg>
+<var>${clean}</var>
+<arg>${text}</arg>
+<arg>Rs.</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces `search_for` in the given `string` with `replace_with`.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.063154" elapsed="0.001003"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-09-19T20:54:22.064157" level="INFO">${clean} = 799</msg>
+<var>${clean}</var>
+<arg>${clean}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.064157" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${clean}</value>
+<status status="PASS" start="2026-09-19T20:54:22.064157" elapsed="0.000000"/>
+</return>
+<msg time="2026-09-19T20:54:22.064157" level="INFO">${total} = 799</msg>
+<var>${total}</var>
+<arg>${i}</arg>
+<status status="PASS" start="2026-09-19T20:54:22.048194" elapsed="0.015963"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-19T20:54:22.065160" level="INFO">Row 2: price=799 x quantity=1 should equal total=799</msg>
+<arg>Row ${i}: price=${price} x quantity=${quantity} should equal total=${total}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.065160" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Total" owner="ValidationLibrary">
+<arg>${price}</arg>
+<arg>${quantity}</arg>
+<arg>${total}</arg>
+<status status="PASS" start="2026-09-19T20:54:22.065160" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${all_totals}</arg>
+<arg>${total}</arg>
+<doc>Adds `values` to the end of `list`.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.065160" elapsed="0.001338"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-09-19T20:54:21.975066" elapsed="0.091432"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${last}</value>
+<status status="PASS" start="2026-09-19T20:54:21.921108" elapsed="0.145390"/>
+</for>
+<kw name="Sum Totals" owner="ValidationLibrary">
+<msg time="2026-09-19T20:54:22.066498" level="INFO">${cart_value} = 1199.0</msg>
+<var>${cart_value}</var>
+<arg>${all_totals}</arg>
+<doc>Adds up a list of per-row totals into one grand total.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.066498" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-19T20:54:22.067529" level="INFO">Final Cart Value (all products combined) = 1199.0</msg>
+<arg>Final Cart Value (all products combined) = ${cart_value}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.066498" elapsed="0.001031"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:53:59.416589" elapsed="22.650940"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-19T20:54:22.068662" elapsed="2.459764"/>
+</kw>
+<status status="PASS" start="2026-09-19T20:53:35.280683" elapsed="49.247743"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cart" id="s1" pass="1" fail="0" skip="0">Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
