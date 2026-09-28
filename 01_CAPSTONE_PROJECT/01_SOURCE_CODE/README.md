@@ -12,6 +12,9 @@ robot --outputdir reports tests/smoke
 robot --outputdir reports tests/regression
 robot --outputdir reports tests/negative
 
+## Run all
+\run_all_tests.bat  
+
 ## Structure
 See project folder layout — tests/, resources/ (pages + keywords),
 libraries/ (Python validation, CSV data, logging), testdata/, config/.
