@@ -30,9 +30,9 @@ All detailed assignment reports are maintained in Google Docs and linked below.
 
 | Assignment | Lab Report |
 |---|---|
-| Assignment 7 |  |
-| Assignment 8 |  |
-| Assignment 9 |  |
+| Assignment 7 |[View Report](https://docs.google.com/document/d/1tIXX-7yEcTz7AI1zQB2h9FaUb1rSIRz7A6INl5i-INo/edit?usp=sharing)|
+| Assignment 8 |[View Report](https://docs.google.com/document/d/1IZ-77LisZv4j8YEboWIOyaYZ5ME0R29aQyIPJR-lIbQ/edit?usp=sharing)|
+
 
 ---
 
@@ -41,8 +41,8 @@ All detailed assignment reports are maintained in Google Docs and linked below.
 | Assignment | Lab Report |
 |---|---|
 | Assignment 1 | [View Report](https://docs.google.com/document/d/1cdMQ8IlmxfDXFE57Fs7aeafIKzAuwGRICfPf7-h3GD0/edit?usp=sharing) |
-| Assignment 2 | |
-| Assignment 3 ||
+| Assignment 2 |[View Report](https://docs.google.com/document/d/1Gpy5vgEHxGO86EQ0f7t6KRPmXJVwuNStLPwh8FGywjk/edit?usp=sharing)|
+| Assignment 3 |[View Report](https://docs.google.com/document/d/1F4fN_GwhVymZ_pC3IjWVLwGbKgFoAouNDhpSQyzilAg/edit?usp=sharing)|
 
 ---
 
